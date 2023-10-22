@@ -31,6 +31,7 @@
     <ProjectReference Include="..\..\Domain\Actuarial.Domain\Actuarial.Domain.csproj" />
     <ProjectReference Include="..\..\Infrastructure\Actuarial.Infrastructure.Repo.Data\Actuarial.Infrastructure.Repo.Data.csproj" />
     <ProjectReference Include="..\..\Infrastructure\Actuarial.Infrastructure.Repo\Actuarial.Infrastructure.Repo.csproj" />
+    <ProjectReference Include="..\..\Infrastructure\Actuarial.Infrastructure.Services\Actuarial.Infrastructure.Services.csproj" />
   </ItemGroup>
 
   <ItemGroup>

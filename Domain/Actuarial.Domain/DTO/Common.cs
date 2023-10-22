@@ -94,8 +94,11 @@ namespace Actuarial.Domain.DTO
         public int? Status { get; set; }
     }
 
- 
 
+    public class EmployerRequestModel : PagingModel
+    {
+        
+    }
 
 
 

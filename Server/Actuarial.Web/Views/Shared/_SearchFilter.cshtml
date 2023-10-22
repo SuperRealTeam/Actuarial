@@ -1,0 +1,36 @@
+﻿@using Actuarial.Domain.DTO;
+
+@model PagingModel
+<div class="col-md-12">
+    <div class="mb-5 mt-4 mt-xl-0 float-right">
+        <div class="agency_search_record w-100">
+            <div class="record_search">
+                @*<input type="submit" name="submit" class="submit" value="">
+                <input type="text" name="search" class="search_inp" placeholder="Search...">*@
+                @Html.HiddenFor(x => x.SortBy)
+                @Html.HiddenFor(x => x.SortOrder)
+                @Html.TextBoxFor(m => m.Search, new { @class = "search_inp", placeholder = "Search..." })
+                @*<a class="cross-sign search-btn search-txt"><i class="fa fa-search" aria-hidden="true"></i>
+                </a>*@
+
+            </div>
+            <div class="show_record" style="float:left">
+                <div class="dataTables_length" id="example1_length">
+                    <div class="dropdown_select">
+                        <select class="example1_length" id="showRecords">
+                            <option value="10" selected="selected">10</option>
+                            <option value="25">25</option>
+                            <option value="50">50</option>
+                            <option value="100">100</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+
+</div>
+
+

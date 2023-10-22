@@ -2,6 +2,8 @@ using Actuarial.Domain.Identity;
 using Actuarial.Infrastructure.Repo.Classes;
 using Actuarial.Infrastructure.Repo.Data;
 using Actuarial.Infrastructure.Repo.Interfaces;
+using Actuarial.Infrastructure.Services.Classes;
+using Actuarial.Infrastructure.Services.Interfaces;
 using Actuarial.Web.Extensions;
 using Actuarial.Web.Init;
 using Microsoft.AspNetCore.Authentication.Cookies;
@@ -42,6 +44,8 @@ builder.Services.AddIdentity<User,Role>(options => options.SignIn.RequireConfirm
 builder.Services.AddControllersWithViews();
 builder.Services.AddRazorPages();
 builder.Services.AddTransient(typeof(IUnitOfWork), typeof(UnitOfWork));
+builder.Services.AddTransient(typeof(IEmpServcies), typeof(EmpServcies));
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

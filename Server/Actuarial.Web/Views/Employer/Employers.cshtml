@@ -1,7 +1,9 @@
-﻿@model ResultClassModel<Employer>
+﻿@using Actuarial.Domain.DTO;
+@using Actuarial.Domain.Emp;
+@model ResultClassModel<Employer>
 @{
     ViewData["Title"] = "Index";
-    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+   
 }
 
 <div id="content-wrapper">
@@ -9,7 +11,7 @@
         <!-- Breadcrumbs-->
         <ol class="breadcrumb">
             <li class="breadcrumb-item">
-                <a href="#">Doctors</a>
+                <a href="#">Employers</a>
             </li>
             <li class="breadcrumb-item active">List</li>
         </ol>
@@ -19,7 +21,7 @@
                 <div class="card">
                     <div class="card-body card-shadow">
                         <div class="row">
-                            @Html.Partial("_SearchFilter", new DoctorRequestModel { SortBy = "Id", SortOrder = "Desc" })
+                            @Html.Partial("_SearchFilter", new EmployerRequestModel { SortBy = "Id", SortOrder = "Desc" })
                         </div>
                         <div class="box">
                             <!-- /.box-header -->
