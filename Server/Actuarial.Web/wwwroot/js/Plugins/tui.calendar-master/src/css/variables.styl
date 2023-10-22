@@ -1,0 +1,44 @@
+// Variables
+// default prefix
+Property = 'tui-full-calendar-'
+// Dayname
+dayname = Property + 'dayname-'
+// Taskview
+milestone = Property + 'milestone-'
+taskview = Property + 'task-'
+// Allday
+allday = Property + 'allday-'
+weekday = Property + 'weekday-'
+// DayGrid
+daygrid = Property + 'daygrid-'
+// Time
+timegrid = Property + 'timegrid-'
+time = Property + 'time-'
+// Month
+month = Property + 'month-'
+
+// Functions
+wh(w, h)
+    width: w
+    height: h
+
+pos(top, left)
+    top: top
+    left: left
+
+mpzero()
+    margin: 0
+    padding: 0
+
+vendor(prop, args)
+    -webkit-{prop} args
+    -moz-{prop} args
+    {prop} args
+
+clearfix()
+    zoom: 1;
+    &:after
+        content: '';
+        display: block;
+        clear: both;
+    

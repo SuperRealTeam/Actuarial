@@ -9,20 +9,24 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastru
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Server", "Server", "{CDD5C7AF-C2F1-4AAA-AB4E-E648ECA3B3D2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Actuarial.Web", "Server\Actuarial.Web\Actuarial.Web.csproj", "{9EB28383-EF12-4DEE-865E-8408EE7CB50B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Actuarial.Web", "Server\Actuarial.Web\Actuarial.Web.csproj", "{9EB28383-EF12-4DEE-865E-8408EE7CB50B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Actuarial.Domain", "Domain\Actuarial.Domain\Actuarial.Domain.csproj", "{B3D22CE8-D96D-45B7-B3D9-88BEBAD10A66}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Actuarial.Domain", "Domain\Actuarial.Domain\Actuarial.Domain.csproj", "{B3D22CE8-D96D-45B7-B3D9-88BEBAD10A66}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Actuarial.Infrastructure.Repo", "Infrastructure\Actuarial.Infrastructure.Repo\Actuarial.Infrastructure.Repo.csproj", "{13F27094-BDE3-441A-AC94-2BF605EDBF5E}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Actuarial.Infrastructure.Repo.Data", "Actuarial.Infrastructure.Repo.Data\Actuarial.Infrastructure.Repo.Data.csproj", "{32169B77-C9ED-4373-BDCD-C37425CE49EF}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Actuarial.Infrastructure.Services", "Actuarial.Infrastructure.Services\Actuarial.Infrastructure.Services.csproj", "{25B5D1A5-FD3F-46E6-BF13-FD166473E111}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Actuarial.Infrastructure.Repo", "Infrastructure\Actuarial.Infrastructure.Repo\Actuarial.Infrastructure.Repo.csproj", "{13F27094-BDE3-441A-AC94-2BF605EDBF5E}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{216EADDD-E6A2-40EB-895C-793BEA859B7F}"
 	ProjectSection(SolutionItems) = preProject
 		README.md = README.md
 	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Actuarial.Infrastructure.Repo.Data", "Infrastructure\Actuarial.Infrastructure.Repo.Data\Actuarial.Infrastructure.Repo.Data.csproj", "{A847E542-5645-41BF-B4A2-DD3076F47FEC}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Actuarial.Infrastructure.Services", "Infrastructure\Actuarial.Infrastructure.Services\Actuarial.Infrastructure.Services.csproj", "{4FA86468-97CB-4629-B98A-96671346658A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{45D70167-21B6-42FC-84F9-5C50DAC7F1F6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Actuarial.Common", "Shared\Actuarial.Common\Actuarial.Common.csproj", "{46015314-9FE9-4FA3-BDB4-4EAF6D6FF732}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -42,14 +46,18 @@ Global
 		{13F27094-BDE3-441A-AC94-2BF605EDBF5E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{13F27094-BDE3-441A-AC94-2BF605EDBF5E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{13F27094-BDE3-441A-AC94-2BF605EDBF5E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{32169B77-C9ED-4373-BDCD-C37425CE49EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{32169B77-C9ED-4373-BDCD-C37425CE49EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{32169B77-C9ED-4373-BDCD-C37425CE49EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{32169B77-C9ED-4373-BDCD-C37425CE49EF}.Release|Any CPU.Build.0 = Release|Any CPU
-		{25B5D1A5-FD3F-46E6-BF13-FD166473E111}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{25B5D1A5-FD3F-46E6-BF13-FD166473E111}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{25B5D1A5-FD3F-46E6-BF13-FD166473E111}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{25B5D1A5-FD3F-46E6-BF13-FD166473E111}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A847E542-5645-41BF-B4A2-DD3076F47FEC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A847E542-5645-41BF-B4A2-DD3076F47FEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A847E542-5645-41BF-B4A2-DD3076F47FEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A847E542-5645-41BF-B4A2-DD3076F47FEC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4FA86468-97CB-4629-B98A-96671346658A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4FA86468-97CB-4629-B98A-96671346658A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4FA86468-97CB-4629-B98A-96671346658A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4FA86468-97CB-4629-B98A-96671346658A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{46015314-9FE9-4FA3-BDB4-4EAF6D6FF732}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{46015314-9FE9-4FA3-BDB4-4EAF6D6FF732}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{46015314-9FE9-4FA3-BDB4-4EAF6D6FF732}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{46015314-9FE9-4FA3-BDB4-4EAF6D6FF732}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -58,8 +66,9 @@ Global
 		{9EB28383-EF12-4DEE-865E-8408EE7CB50B} = {CDD5C7AF-C2F1-4AAA-AB4E-E648ECA3B3D2}
 		{B3D22CE8-D96D-45B7-B3D9-88BEBAD10A66} = {5E18AAF9-68C2-4616-9588-6253632CA699}
 		{13F27094-BDE3-441A-AC94-2BF605EDBF5E} = {F0AFED37-A53C-4D90-BCAA-87FCDC0A4E82}
-		{32169B77-C9ED-4373-BDCD-C37425CE49EF} = {F0AFED37-A53C-4D90-BCAA-87FCDC0A4E82}
-		{25B5D1A5-FD3F-46E6-BF13-FD166473E111} = {F0AFED37-A53C-4D90-BCAA-87FCDC0A4E82}
+		{A847E542-5645-41BF-B4A2-DD3076F47FEC} = {F0AFED37-A53C-4D90-BCAA-87FCDC0A4E82}
+		{4FA86468-97CB-4629-B98A-96671346658A} = {F0AFED37-A53C-4D90-BCAA-87FCDC0A4E82}
+		{46015314-9FE9-4FA3-BDB4-4EAF6D6FF732} = {45D70167-21B6-42FC-84F9-5C50DAC7F1F6}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9B4BD6D9-DAE3-47EA-B337-20412971660C}

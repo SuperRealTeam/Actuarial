@@ -38,4 +38,15 @@ namespace Actuarial.Domain.Enumerable
         Update = 2,
         Delete = 3
     }
+    /// <summary>
+    /// 
+    /// </summary>
+    public enum ActionStatus
+    {
+        Successfull = 1,
+        Error = 2,
+        LoggedOut = 3,
+        Unauthorized = 4,
+        Failed = 5,
+    }
 }

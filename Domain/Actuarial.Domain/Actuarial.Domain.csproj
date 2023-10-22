@@ -14,4 +14,7 @@
 	<ItemGroup>
 	  <Folder Include="DataContracts\" />
 	</ItemGroup>
+	<ItemGroup>
+	  <ProjectReference Include="..\..\Shared\Actuarial.Common\Actuarial.Common.csproj" />
+	</ItemGroup>
 </Project>

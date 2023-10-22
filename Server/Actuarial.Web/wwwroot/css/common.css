@@ -1,0 +1,40 @@
+﻿/*Neeraj*/
+.modalAjaxLoader {
+    position: fixed;
+    z-index: 9999;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: Black;
+    filter: alpha(opacity=60);
+    opacity: 0.8;
+    -moz-opacity: 0.8;
+}
+
+    .modalAjaxLoader .center {
+        z-index: 1000;
+        margin: 350px auto;
+        padding: 10px;
+        width: 53px;
+        background-color: White;
+        border-radius: 10px;
+        filter: alpha(opacity=100);
+        opacity: 1;
+        -moz-opacity: 1;
+    }
+
+/*Pagination*/
+.pagination {
+    margin: 18px 0;
+}
+
+    .pagination > .active > a,
+    .pagination > .active > span,
+    .pagination > .active > a:hover,
+    .pagination > .active > span:hover,
+    .pagination > .active > a:focus,
+    .pagination > .active > span:focus {
+        background-color: #258452;
+        color: white;
+    }

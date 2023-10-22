@@ -1,0 +1,203 @@
+/*-----Common Style---------*/
+a:hover {
+    color: #c27ad3;
+}
+
+.pr-thumb-img tooltip tip {
+    background: #c27ad3;
+    color: rgba(255,255,255,0.8);
+}
+
+.pr-thumb-img tooltip._top:not(._left):not(._right) tip tip-arrow {
+    border-top-color: #c27ad3;
+}
+
+@media (min-width: 992px) {
+    #mainNav.navbar-light .navbar-collapse .navbar-sidenav li.active a.nav-link {
+        background: #947fee;
+        background: -moz-linear-gradient(left, #6dcacc 0%, #1479bd 50%, #1479bd 100%);
+        background: -webkit-linear-gradient(left, #6dcacc 0%,#1479bd 75%,#1479bd 100%);
+        background: linear-gradient(to right, #6dcacc 0%,#1479bd 75%,#1479bd 100%);
+        color: #ffffff;
+        opacity: 1;
+    }
+
+    #mainNav.navbar-light .navbar-collapse .navbar-sidenav li::after {
+        content: '';
+        position: absolute;
+        right: 0px;
+        top: 24px;
+        width: 0;
+        height: 0;
+        border-right: 12px solid #fff;
+        border-top: 7px solid transparent;
+        border-bottom: 7px solid transparent;
+    }
+
+    #mainNav.navbar-light .navbar-collapse .navbar-sidenav li.active a.nav-link:hover, #mainNav.navbar-light .navbar-collapse .navbar-sidenav li.active a.nav-link:focus {
+        background: #947fee;
+        background: -moz-linear-gradient(left, #6dcacc 0%, #1479bd 50%, #1479bd 100%);
+        background: -webkit-linear-gradient(left, #6dcacc 0%,#1479bd 75%,#1479bd 100%);
+        background: linear-gradient(to right, #6dcacc 0%,#1479bd 75%,#1479bd 100%);
+        color: #ffffff;
+        opacity: 1;
+    }
+
+    #mainNav.navbar-light .navbar-collapse .navbar-sidenav li a.nav-link:hover, #mainNav.navbar-light .navbar-collapse .navbar-sidenav li a.nav-link:focus {
+        background: #947fee;
+        background: -moz-linear-gradient(left, #6dcacc 0%, #1479bd 50%, #1479bd 100%);
+        background: -webkit-linear-gradient(left, #6dcacc 0%,#1479bd 75%,#1479bd 100%);
+        background: linear-gradient(to right, #6dcacc 0%,#1479bd 75%,#1479bd 100%);
+        color: #ffffff;
+        opacity: 1;
+    }
+}
+
+.theme-bg {
+    background-color: #c27ad3;
+}
+
+.theme-cl {
+    color: #1d1d1d;
+}
+
+.br-theme {
+    border-color: #c27ad3 !important
+}
+
+.theme-btn, .theme-btn:hover, .theme-btn:focus {
+    border: 1px solid #c27ad3 !important;
+    background: #c27ad3;
+    color: #ffffff !important;
+}
+
+.gredient-cl {
+    background: #947fee;
+    background: -moz-linear-gradient(left, #947fee 0%, #c27ad3 50%, #f45ca1 100%);
+    background: -webkit-linear-gradient(left, #947fee 0%,#c27ad3 50%,#f45ca1 100%);
+    background: linear-gradient(to right, #947fee 0%,#c27ad3 50%,#f45ca1 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-fill-color: transparent;
+}
+
+.gredient-bg {
+    background: #947fee;
+    background: -moz-linear-gradient(left, #947fee 0%, #c27ad3 50%, #f45ca1 100%);
+    background: -webkit-linear-gradient(left, #947fee 0%,#c27ad3 50%,#f45ca1 100%);
+    background: linear-gradient(to right, #947fee 0%,#c27ad3 50%,#f45ca1 100%);
+}
+
+.gredient-btn, .gredient-btn:hover, .gredient-btn:focus {
+    color: #ffffff;
+    border: none;
+    background: #947fee !important;
+    background: -moz-linear-gradient(left, #947fee 0%, #c27ad3 50%, #f45ca1 100%) !important;
+    background: -webkit-linear-gradient(left, #947fee 0%,#c27ad3 50%,#f45ca1 100%) !important;
+    background: linear-gradient(to right, #947fee 0%,#c27ad3 50%,#f45ca1 100%) !important;
+}
+
+/*=======================================
+All Element Color
+======================================*/
+/*--------Team---------*/
+.our-team:hover, .our-team:focus {
+    border-color: #c27ad3;
+}
+
+/*-------- Pricing ---------*/
+.pricingTable:hover {
+    border: 2px solid #c27ad3;
+}
+
+.pricingTable .price-value i {
+    color: #c27ad3;
+}
+
+.pricingTable .btn-block {
+    background: #c27ad3;
+}
+
+.pricingTable:hover .btn-block {
+    color: #c27ad3;
+}
+
+/*-------- Accordion ---------*/
+.accordion-stylist .panel-title a:before, .accordion-stylist .panel-title a.collapsed:before {
+    background: #c27ad3;
+}
+
+.accordion-stylist .panel-title a.collapsed:before {
+    background: #f2f7fb;
+    color: #b7cde4;
+}
+
+/*-------- Tab ---------*/
+.tab .nav-tabs li a:hover,
+.tab .nav-tabs li.active a {
+    background: #c27ad3;
+}
+/*-------- Ecommerce ---------*/
+.uc_soft_product_box .uc_box_product .uc_product_col .uc_product_details .uc_view_cart a:hover {
+    color: #c27ad3;
+}
+/*------ Checkbox & Radio Button --------*/
+.custom-checkbox input[type="checkbox"]:checked + label:before {
+    border-color: #c27ad3;
+    background: #c27ad3;
+}
+
+.custom-radio [type="radio"]:checked + label:after,
+.custom-radio [type="radio"]:not(:checked) + label:after {
+    background: #c27ad3;
+}
+
+/*Neeraj*/
+.modalAjaxLoader {
+    position: fixed;
+    z-index: 999;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: Black;
+    filter: alpha(opacity=60);
+    opacity: 0.8;
+    -moz-opacity: 0.8;
+}
+
+    .modalAjaxLoader .center {
+        z-index: 1000;
+        margin: 350px auto;
+        padding: 10px;
+        width: 53px;
+        background-color: White;
+        border-radius: 10px;
+        filter: alpha(opacity=100);
+        opacity: 1;
+        -moz-opacity: 1;
+    }
+
+/*Pagination*/
+.pagination {
+    margin: 18px 0;
+}
+
+    .pagination > .active > a,
+    .pagination > .active > span,
+    .pagination > .active > a:hover,
+    .pagination > .active > span:hover,
+    .pagination > .active > a:focus,
+    .pagination > .active > span:focus {
+        background-color: #2083D6;
+    }
+
+input.google_map_placeholder {
+    max-width: 320px;
+    width: 100%;
+}
+
+#exampleAccordion {
+    overflow-y: scroll !important
+}

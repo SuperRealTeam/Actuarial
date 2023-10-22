@@ -1,0 +1,1037 @@
+﻿body {
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Raleway', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0px;
+    padding: 0px;
+}
+
+.leftlogo img {
+    width: 58%;
+}
+
+.lefttextpargh.privacy-block h1 {
+    font-size: 22px !important;
+    padding-bottom: 18px !important;
+    padding-top: 16px;
+}
+
+.lefttextpargh.privacy-block h2 {
+    font-size: 31px !important;
+    padding-bottom: 18px !important;
+    color: #258452;
+    padding-top: 16px;
+}
+
+footer ul li {
+    list-style: none;
+    display: inline;
+    padding-bottom: 0;
+    border-right: 1px solid #fff;
+    padding-right: 18px;
+    padding-left: 10px;
+    line-height: 5px;
+}
+
+    footer ul li a {
+        color: #fff;
+        border-right: 1px;
+    }
+
+        footer ul li a:hover {
+            color: #fff;
+        }
+
+.privacy-block {
+    padding-bottom: 55px;
+}
+
+.lefttextpargh.privacy-block.terms-block h2 {
+    font-size: 21px !important;
+    padding-bottom: 18px !important;
+    color: #258452;
+    padding-top: 16px;
+}
+
+.lefttextpargh.privacy-block.terms-block h1 {
+    font-size: 22px !important;
+    padding-bottom: 18px !important;
+    padding-top: 16px;
+}
+
+.lefttextpargh.privacy-block.terms-block ul li {
+    margin: 0px;
+    padding: 0px;
+    font-size: 15px;
+    line-height: 31px;
+    list-style: none;
+}
+
+footer ul li:last-child {
+    border-right: 0px;
+}
+
+footer ul {
+    margin: 0px;
+    padding: 10px 0 17px 0;
+    float: left;
+    width: 100%;
+    text-align: right;
+}
+
+.lefttextpargh.privacy-block ul {
+    margin: 0px;
+    padding: 0px 0 30px 42px;
+}
+
+.copy-right {
+    line-height: 50px;
+}
+
+.lefttextpargh.privacy-block ul li {
+    margin: 0px;
+    padding: 0px;
+    font-size: 15px;
+    line-height: 25px;
+}
+
+.lefttextpargh.privacy-block p {
+    font-size: 15px;
+    line-height: 28px;
+}
+
+    .lefttextpargh.privacy-block p:nth-child(3) {
+        font-size: 15px;
+        line-height: 28px;
+        text-align: left;
+        color: #000;
+    }
+
+.social-block ul {
+    margin: 0px;
+    padding: 0px;
+    text-align: right;
+}
+
+    .social-block ul li {
+        margin: 0px;
+        padding: 0px 26px 0 0;
+        list-style: none;
+        display: inline;
+    }
+
+        .social-block ul li:last-child {
+            padding-right: 0;
+        }
+
+.social-block {
+    line-height: 73px;
+}
+
+.rightimg img {
+    width: 100%;
+}
+
+.leftlogo {
+    padding-bottom: 31px;
+    padding-top: 11px;
+}
+
+.lefttextpargh {
+    padding-top: 3%;
+}
+
+.rightimg {
+    padding-top: 30px;
+}
+
+.lefttextpargh h1 {
+    font-size: 44px;
+    color: #258452;
+    padding-bottom: 36px;
+}
+
+.lefttextpargh p {
+    font-size: 26px;
+    font-weight: 500;
+}
+
+.lefttextpargh span {
+    color: #258452;
+}
+
+/*.lefttextpargh p:nth-child(3) {
+    text-align: center;
+    color: #707075;
+    position: relative;
+}
+
+    .lefttextpargh p:nth-child(3)::before {
+    }
+
+    .lefttextpargh p:nth-child(3)::after {
+        content: '';
+    }*/
+
+.lefttextpargh p img {
+    width: 180px;
+}
+
+.google-pay-block img {
+    width: 131px;
+    /* text-align: right; */
+}
+
+.google-pay-block {
+    text-align: right;
+    padding-top: 55px;
+}
+
+header {
+    padding-bottom: 157px;
+}
+
+.healthcare img {
+    width: 100%;
+}
+
+.righthealthcare p {
+    font-size: 33px;
+    line-height: 49px;
+    padding-top: 21px;
+}
+
+.righthealthcare {
+    padding-top: 25px;
+}
+
+    .righthealthcare ul {
+        margin: 0px;
+        padding: 0px;
+    }
+
+        .righthealthcare ul li {
+            list-style: none;
+            float: left;
+            width: 100%;
+            font-size: 28px;
+            line-height: 66px;
+        }
+
+            .righthealthcare ul li img {
+                width: 33px;
+                margin-right: 13px;
+            }
+
+.quickly-block {
+    padding-top: 150px;
+}
+
+.bulikicon p {
+    text-align: center;
+    color: #1b2536;
+    font-size: 15px;
+}
+
+.quickly-block h2 span {
+    color: #258452;
+    background: #fafabe;
+}
+
+.find-block h4 {
+    text-align: center;
+    font-size: 31px;
+    line-height: 45px;
+    padding: 119px 0 52px 0;
+    color: #1b2536;
+}
+
+.find-block p {
+    font-size: 32px;
+    color: #258452;
+    font-weight: 500;
+    padding-bottom: 9px;
+    float: left;
+    width: 100%;
+    text-align: center;
+}
+
+.find-block h4 span {
+    font-weight: 600;
+}
+
+.bulikicon {
+    padding-top: 65px;
+}
+
+.billing-provider-block {
+    background: #fff;
+    margin: 45px 14px;
+    border-radius: 36px;
+    /* float: left; */
+    /* width: 60%; */
+    padding-top: 69px;
+}
+
+    .billing-provider-block h5::before {
+        content: '';
+        position: absolute;
+        width: 210px;
+        height: 4px;
+        background: #0d733b;
+        left: 0px;
+        right: 0px;
+        margin: auto;
+        top: 75px;
+    }
+
+    .billing-provider-block h5 {
+        text-align: center;
+        font-size: 48px;
+        color: #0d733b;
+        position: relative;
+        padding-bottom: 95px;
+    }
+
+.bulik-left img {
+    width: 100%;
+}
+
+.provider-right p {
+    text-align: left;
+    font-size: 25px;
+    color: #1b2536;
+    padding-top: 24%;
+}
+
+.bulikicon:nth-child(3) {
+    padding-top: 99px;
+}
+
+.bulikicon:nth-child(5) {
+    padding-top: 99px;
+}
+
+.bulikicon:nth-child(7) {
+    padding-top: 99px;
+}
+
+.quickly-block h2 {
+    text-align: center;
+    font-size: 35px;
+    color: #1b2536;
+    padding: 0 26px !important;
+    line-height: 51px;
+}
+
+.find-block {
+    /* background: #ccc; */
+    background: #cfebdc;
+    background: -moz-linear-gradient(top, #cfebdc 0%, #fff 100%);
+    background: -webkit-linear-gradient(top, #cfebdc 0%,#fff 100%);
+    background: linear-gradient(to bottom, #cfebdc 0%,#fff 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cfebdc', endColorstr='#fff',GradientType=0 );
+    margin-top: 98px;
+}
+
+.patients-block {
+    padding-top: 45px;
+}
+
+    .patients-block h6 {
+        text-align: center;
+        font-size: 37px;
+        color: #1b2536;
+        padding-bottom: 75px;
+    }
+
+.discover-block {
+    padding-top: 104px;
+}
+
+    .discover-block h4 {
+        text-align: center;
+        font-size: 31px;
+        line-height: 44px;
+    }
+
+        .discover-block h4 span {
+            color: #258452;
+        }
+
+    .discover-block p {
+        text-align: center;
+        float: left;
+        width: 100%;
+        padding: 53px 0 0 0;
+        margin-bottom: 0;
+        font-size: 25px;
+        color: #1b2536;
+    }
+
+        .discover-block p:last-child {
+            padding-bottom: 0;
+            margin-bottom: 0;
+            padding-top: 19px;
+        }
+
+.subscribe {
+    background: #258452;
+    margin-top: 0px;
+    float: left;
+    width: 100%;
+    padding-top: 0;
+    margin-top: 85px;
+    padding-bottom: 27px;
+}
+
+.works h2 {
+    text-align: center;
+    font-weight: normal;
+    font-size: 40px;
+    margin-bottom: 9px;
+    margin-top: 49px;
+    color: #fff;
+    position: relative;
+}
+
+.works p {
+    color: #464646;
+    font-size: 20px;
+}
+
+.works h2::before {
+    content: '';
+    position: absolute;
+    width: 100px;
+    height: 1px;
+    background: #fff;
+    left: 0px;
+    right: 0px;
+    margin: auto;
+    top: 61px;
+}
+
+.contact-block {
+    margin-top: 64px;
+}
+
+.address-block {
+    max-width: 35%;
+}
+
+.works p {
+    color: #fff;
+    font-size: 20px;
+    padding: 25px 290px;
+    text-align: center;
+}
+
+.address_block {
+    float: left;
+    margin-bottom: 50px;
+    margin-top: 26px;
+}
+
+    .address_block ul {
+        margin: 0px;
+        padding: 0px;
+        text-align: right;
+    }
+
+        .address_block ul li {
+            float: left;
+            list-style: none;
+        }
+
+            .address_block ul li p {
+                font-size: 13px;
+                border-right: 1px solid #c5c7cb;
+                padding: 0 16px 0 0;
+                text-align: right;
+            }
+
+.address_block_new {
+    float: right;
+    margin-bottom: 45px;
+    margin-right: 80px;
+}
+
+    .address_block_new ul {
+        margin: 0px;
+        padding: 0px;
+        text-align: right;
+    }
+
+        .address_block_new ul li {
+            float: left;
+            list-style: none;
+        }
+
+            .address_block_new ul li p {
+                font-size: 13px;
+                border-right: 1px solid #c5c7cb;
+                padding: 0 16px 0 0;
+                text-align: right;
+            }
+
+            .address_block_new ul li span {
+                float: left;
+                width: 100%;
+                font-size: 14px;
+                padding-bottom: 4px;
+                font-weight: 600;
+            }
+
+            .address_block_new ul li img {
+                padding-left: 13px;
+                padding-top: 11px;
+            }
+
+footer {
+    background: #1d653f;
+    float: left;
+    width: 100%;
+    text-align: center;
+    color: #fff;
+    padding: 14px 0;
+}
+
+.address_block ul li span {
+    float: left;
+    width: 100%;
+    font-size: 14px;
+    padding-bottom: 4px;
+    font-weight: 600;
+}
+
+.address_block ul li img {
+    padding-left: 13px;
+    padding-top: 11px;
+}
+
+.e_mail {
+    border: 0px;
+    border-radius: 5px;
+    color: #464646;
+    font-size: 16px;
+    padding: 12px 0 12px 15px;
+    margin-bottom: 30px;
+    background: #fff;
+    width: 100%;
+    border-right: 0px;
+    border-left: 0px;
+    border-top: 0px;
+    font-weight: 300;
+}
+
+.teatarea33 {
+    float: left;
+    margin-right: 13px;
+    background-color: #fff;
+    border-radius: 5px;
+    height: 99px !important;
+    /*color: #fff;*/
+    font-size: 15px;
+    border-right: 0px;
+    border-left: 0px;
+    border-top: 0px;
+    width: 100%;
+    padding-left: 14px;
+    margin-top: 1px;
+}
+
+.righttext-privacy-box {
+    font-size: 15px;
+    color: #fff;
+    padding-top: 36px;
+}
+
+.read .readMore a {
+    background-color: transparent;
+    border: 2px solid #edc11c;
+    border-radius: 30px;
+    color: #339a99;
+    padding: 11px 33px;
+    font-size: 16px;
+    font-weight: 600;
+    margin-right: 0;
+    /* width: 357px; */
+    display: block;
+    text-align: center;
+    text-transform: uppercase;
+    margin-top: 35px;
+    margin-bottom: 35px;
+    color: #edc11c;
+}
+
+.patients-block span {
+    color: #258452;
+}
+
+.patinets-img img {
+    width: 100%;
+}
+
+.patients-block {
+    padding-top: 45px;
+    font-size: 22px;
+}
+
+@media only screen and (min-width: 320px) and (max-width: 767px) {
+    .copy-right {
+        line-height: 50px;
+        text-align: center !important;
+    }
+
+    .righthealthcare ul li {
+        list-style: none;
+        float: left;
+        width: 100%;
+        font-size: 26px;
+        line-height: 55px;
+    }
+
+    footer ul {
+        margin: 0px;
+        padding: 10px 0 17px 0;
+        float: left;
+        width: 100%;
+        text-align: center;
+    }
+
+        footer ul li {
+            list-style: none;
+            display: inline;
+            padding-bottom: 0;
+            border-right: 1px solid #fff;
+            padding-right: 17px;
+            padding-left: 10px;
+            line-height: 5px;
+        }
+
+    .lefttextpargh.privacy-block h1 {
+        font-size: 23px !important;
+        padding-bottom: 18px !important;
+        padding-top: 16px;
+    }
+
+    .lefttextpargh.privacy-block h2 {
+        font-size: 22px !important;
+        padding-bottom: 18px !important;
+        color: #258452;
+        padding-top: 16px;
+    }
+
+    .google-pay-block img {
+        width: 131px !important;
+    }
+
+    .lefttextpargh p:nth-child(3) {
+        text-align: center;
+        display: block !important;
+    }
+
+    .lefttextpargh {
+        padding-top: 9%;
+        text-align: center;
+    }
+
+    .google-pay-block {
+        text-align: center;
+        padding-top: 3px;
+        padding-bottom: 25px;
+    }
+
+    .leftlogo {
+        padding-bottom: 0;
+        text-align: center;
+    }
+
+    .social-block ul {
+        margin: 0px;
+        padding: 0px;
+        text-align: center;
+    }
+
+    .lefttextpargh h1 {
+        font-size: 31px;
+        color: #258452;
+        padding-bottom: 13px;
+    }
+
+    .lefttextpargh p {
+        font-size: 21px;
+    }
+
+        .lefttextpargh p:nth-child(4) {
+            display: none;
+        }
+
+        .lefttextpargh p:nth-child(3)::before {
+            content: '';
+            position: absolute;
+            width: 39px;
+            height: 1px;
+            background: transparent;
+            left: 78px;
+            top: 16px;
+        }
+
+        .lefttextpargh p:nth-child(3)::after {
+            content: '';
+            position: absolute;
+            width: 39px;
+            height: 1px;
+            background: transparent;
+            left: 172px;
+            top: 15px;
+        }
+
+    .address_block {
+        float: right;
+        margin-bottom: 50px;
+        margin-top: 26px;
+    }
+
+    .righthealthcare p {
+        font-size: 22px;
+        line-height: 33px;
+        padding-top: 21px;
+        text-align: center;
+    }
+
+    .quickly-block {
+        padding-top: 60px;
+    }
+
+        .quickly-block h2 {
+            text-align: center;
+            font-size: 23px;
+            color: #1b2536;
+            padding: 0 26px !important;
+            line-height: 39px;
+        }
+
+    .bulikicon:nth-child(3) {
+        padding-top: 37px;
+    }
+
+    .bulikicon {
+        padding-top: 25px;
+    }
+
+        .bulikicon:nth-child(5) {
+            padding-top: 38px;
+        }
+
+        .bulikicon:nth-child(7) {
+            padding-top: 49px;
+        }
+
+    .find-block h4 {
+        text-align: center;
+        font-size: 20px;
+        line-height: 45px;
+        padding: 39px 0 52px 0;
+        color: #1b2536;
+        margin-top: 0;
+    }
+
+    .find-block {
+        margin-top: 35px;
+    }
+
+        .find-block p {
+            font-size: 23px;
+            color: #258452;
+            font-weight: 500;
+            padding-bottom: 9px;
+            float: left;
+            width: 100%;
+            text-align: center;
+        }
+
+            .find-block p img {
+                width: 39%;
+            }
+
+    .billing-provider-block h5 {
+        text-align: center;
+        font-size: 22px;
+        color: #0d733b;
+        position: relative;
+        padding-bottom: 95px;
+    }
+
+    .provider-right p {
+        text-align: left;
+        font-size: 19px;
+        color: #1b2536;
+        padding-top: 24%;
+    }
+
+    .patients-block h6 {
+        text-align: center;
+        font-size: 22px;
+        color: #1b2536;
+        padding-bottom: 8px;
+    }
+
+    .discover-block h4 {
+        text-align: center;
+        font-size: 18px;
+        line-height: 28px;
+    }
+
+    .discover-block img {
+        width: 122px;
+    }
+
+    .works h2 {
+        text-align: center;
+        font-weight: normal;
+        font-size: 31px;
+        margin-bottom: 9px;
+        margin-top: 49px;
+        color: #fff;
+        position: relative;
+    }
+
+    .works p {
+        color: #fff;
+        font-size: 16px;
+        padding: 25px 0;
+        text-align: center;
+    }
+
+    .address_block ul li {
+        float: left;
+        list-style: none;
+        width: 88%;
+    }
+
+        .address_block ul li:last-child {
+            width: 12%;
+        }
+
+    .address_block_new {
+        float: right;
+        margin-bottom: 45px;
+        margin-right: 0;
+    }
+
+        .address_block_new ul li {
+            float: left;
+            list-style: none;
+            width: auto;
+        }
+
+            .address_block_new ul li:last-child {
+                width: 12%;
+            }
+
+    .address-block {
+        max-width: 97%;
+    }
+
+    header {
+        padding-bottom: 67px;
+        overflow: hidden;
+    }
+}
+
+@media only screen and (min-width:768px) and (max-width: 1023px) {
+    .lefttextpargh h1 {
+        font-size: 42px;
+        color: #258452;
+        padding-bottom: 29px;
+    }
+
+    .lefttextpargh p:nth-child(3) {
+        text-align: center;
+        color: #707075;
+        position: relative;
+        display: none;
+    }
+
+    .lefttextpargh p:nth-child(4) {
+        font-size: 26px;
+        display: none;
+    }
+
+    .righthealthcare p {
+        font-size: 23px;
+        line-height: 28px;
+        padding-top: 0;
+    }
+
+    .billing-provider-block h5 {
+        text-align: center;
+        font-size: 42px;
+        color: #0d733b;
+        position: relative;
+        padding-bottom: 95px;
+    }
+
+    .provider-right p {
+        text-align: left;
+        font-size: 24px;
+        color: #1b2536;
+        padding-top: 0;
+    }
+
+    .patinets-img {
+        padding-top: 65px;
+    }
+
+    .works p {
+        color: #fff;
+        font-size: 20px;
+        padding: 25px 0;
+        text-align: center;
+    }
+
+    .address_block ul li {
+        float: left;
+        list-style: none;
+        width: 85%;
+    }
+
+    .address-block {
+        max-width: 38%;
+    }
+
+    .address_block ul li:last-child {
+        width: 20px;
+    }
+
+    .address_block_new ul li {
+        float: left;
+        list-style: none;
+        width: 85%;
+    }
+
+    .address_block_new {
+        float: right;
+        margin-bottom: 45px;
+        margin-right: 0;
+    }
+
+        .address_block_new ul li:last-child {
+            width: 20px;
+        }
+
+    .righttext-privacy-box {
+        font-size: 13px;
+        color: #fff;
+        padding-top: 36px;
+    }
+
+    .leftlogo {
+        padding-bottom: 0;
+        padding-top: 16px;
+    }
+}
+
+@media only screen and (min-width:1024px) and (max-width: 1030px) {
+    .lefttextpargh h1 {
+        font-size: 42px;
+        color: #258452;
+        padding-bottom: 29px;
+    }
+
+    .lefttextpargh p:nth-child(3) {
+        text-align: center;
+        color: #707075;
+        position: relative;
+        display: none;
+    }
+
+    .lefttextpargh p:nth-child(4) {
+        font-size: 26px;
+        display: none;
+    }
+
+    .righthealthcare p {
+        font-size: 30px;
+        line-height: 46px;
+        padding-top: 0;
+    }
+
+    .billing-provider-block h5 {
+        text-align: center;
+        font-size: 42px;
+        color: #0d733b;
+        position: relative;
+        padding-bottom: 95px;
+    }
+
+    .provider-right p {
+        text-align: left;
+        font-size: 28px;
+        color: #1b2536;
+        padding-top: 72px;
+    }
+
+    .patinets-img {
+        padding-top: 65px;
+    }
+
+    .works p {
+        color: #fff;
+        font-size: 20px;
+        padding: 25px 0;
+        text-align: center;
+    }
+
+    .address_block ul li {
+        float: left;
+        list-style: none;
+        width: 85%;
+    }
+
+    .address-block {
+        max-width: 38%;
+    }
+
+    .address_block ul li:last-child {
+        width: 20px;
+    }
+
+    .address_block_new ul li {
+        float: left;
+        list-style: none;
+        width: 85%;
+    }
+
+    .address_block_new {
+        float: right;
+        margin-bottom: 45px;
+        margin-right: 25px;
+    }
+
+        .address_block_new ul li:last-child {
+            width: 20px;
+        }
+
+    .righttext-privacy-box {
+        font-size: 13px;
+        color: #fff;
+        padding-top: 36px;
+    }
+
+    .leftlogo {
+        padding-bottom: 0;
+        padding-top: 16px;
+    }
+
+   
+}
+
+.field-validation-error {
+    color: #ff1919;
+}

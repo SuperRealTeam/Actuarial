@@ -16,8 +16,18 @@ namespace Actuarial.Domain.Identity
     /// </summary>
     public class User : IdentityUser<Guid>
     {
-        
 
+
+
+        /// <summary>
+        ///     the first name
+        /// </summary>
+        public string? FirstName { get; set; }
+
+        /// <summary>
+        ///     the last name
+        /// </summary>/.. 
+        public string LastName { get; set; }
 
 
 

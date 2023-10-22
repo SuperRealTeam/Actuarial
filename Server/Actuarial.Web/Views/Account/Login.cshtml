@@ -1,0 +1,54 @@
+﻿@model Actuarial.Domain.DTO.LoginModal
+@{
+    ViewData["Title"] = "Login";
+    Layout = "~/Views/Shared/_AccountLayout.cshtml";
+}
+<section id="signup_main">
+    
+    <div class="wh_bg">
+
+        @*<h1>Admin Login</h1>*@
+        <form id="formLogin" method="post">
+           
+            <div class="credential_form cmn_form">
+                <h1>Welcome to Actuarial</h1>
+                <div class="wd100 btm_gap">
+                    <label class="label">Email</label>
+                    @Html.TextBoxFor(x => x.UserName, new { @class = "inp", @placeholder = "Username" })
+                    @Html.ValidationMessageFor(x => x.UserName)
+                </div>
+                <div class="wd100 btm_gap">
+                    <label class="label">Password</label>
+                    @Html.PasswordFor(x => x.Password, new { @class = "inp", @placeholder = "Password" })
+                    @Html.ValidationMessageFor(x => x.Password)
+                </div>
+                <div class="full_wd " style="min-height:50px">
+                    <label class="cus_checkbox">
+                        Remember me
+                        <input type="checkbox" asp-for="RememberMe">
+                        <span class="checkmark"></span>
+                    </label>
+                </div>
+                <div class="form_row">
+                    <div class="left">
+                        <input type="button" id="btnLogin" class="submit" value="Login" />
+                    </div>
+                    @*<div class="right">
+                    <a asp-action="ForgotPassword" asp-area="" asp-controller="Account" class="link_btn">Forgot Password</a>
+                    </div>*@
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>
+@section Scripts{
+    <script src="~/js/FrontEnd/UserAuthentication.js"></script>
+    <script type="text/javascript">
+        var siteURL =
+            {
+                ajaxLoginUser: '@Url.Action("LoginUser", "Account", new { area = "" })',
+            Dashboard: '@Url.Action("Dashboard", "Dashboard", new { area = "" })',
+            }
+    </script>
+}

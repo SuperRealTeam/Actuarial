@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net7.0</TargetFramework>
@@ -7,7 +7,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Actuarial.Infrastructure.Repo.Data\Actuarial.Infrastructure.Repo.Data.csproj" />
+   
+    <ProjectReference Include="..\..\Domain\Actuarial.Domain\Actuarial.Domain.csproj" />
+    <ProjectReference Include="..\Actuarial.Infrastructure.Repo.Data\Actuarial.Infrastructure.Repo.Data.csproj" />
   </ItemGroup>
 
 </Project>
