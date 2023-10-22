@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\Actuarial.Infrastructure.Repo.Data\Actuarial.Infrastructure.Repo.Data.csproj" />
+  </ItemGroup>
+
 </Project>
