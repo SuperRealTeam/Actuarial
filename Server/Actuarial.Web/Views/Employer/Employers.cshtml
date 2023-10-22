@@ -1,0 +1,92 @@
+﻿@model ResultClassModel<Employer>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div id="content-wrapper">
+    <div class="container-fluid">
+        <!-- Breadcrumbs-->
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a href="#">Doctors</a>
+            </li>
+            <li class="breadcrumb-item active">List</li>
+        </ol>
+        <!-- Icon Cards-->
+        <div class="row">
+            <div class="col-12 grid-margin">
+                <div class="card">
+                    <div class="card-body card-shadow">
+                        <div class="row">
+                            @Html.Partial("_SearchFilter", new DoctorRequestModel { SortBy = "Id", SortOrder = "Desc" })
+                        </div>
+                        <div class="box">
+                            <!-- /.box-header -->
+                            <div class="box-body">
+                                <div id="example1_wrapper" class="dataTables_wrapper">
+                                    <div class="formpadding">
+                                        <div class="content">
+                                            @*@Html.Partial("_SearchFilter", new PagingModel { SortBy = "CreatedOn", SortOrder = "Desc" })*@
+                                            <div id="divResult" class="table-responsive cus_table">
+                                                <table class="table center-aligned-table">
+                                                    <thead>
+                                                        <tr>
+                                                            @*<th rowspan="1" colspan="1">Sr. No</th>*@
+                                                            <th rowspan="1" class="sorting" data-sortby="Name" colspan="1">Name</th>
+                                                            <th rowspan="1" class="sorting" data-sortby="Gender" colspan="1">Gender</th>
+                                                            <th rowspan="1" class="sorting" data-sortby="Birthday" colspan="1">DOB</th>
+                                                            <th rowspan="1" class="sorting" data-sortby="DOH" colspan="1">DOH</th>
+                                                            <th rowspan="1" class="sorting" data-sortby="Department" colspan="1">Department</th>
+                                                            <th rowspan="1" class="sorting" data-sortby="BasicSalary" colspan="1">BasicSalary</th>
+                                                            <th rowspan="1" class="sorting" data-sortby="TotalSalary" colspan="1">TotalSalary</th>
+                                                            <th rowspan="1" class="sorting" data-sortby="Mflg" colspan="1">Mflg</th>
+                                                            <th>Action</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        @Html.Partial("Partials/_Employers", Model)
+                                                    </tbody>
+                                                </table>
+                                            </div>
+
+                                        </div>
+
+                                        @Html.Partial("_Paging")
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /.box-body -->
+                        </div>
+
+                        <!-- /.box -->
+                    </div>
+                    <!-- /.col -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@section Scripts{
+    <script src="~/js/UserDefinedScripts/paging.js"></script>
+    <script type="text/javascript">
+        var totalCount = "@Model.TotalCount";
+    </script>
+    <script src="~/js/Admin/Doctor.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            PageNumbering(totalCount);
+        });
+        var siteURL =
+        {
+            DeleteDoctor: '@Url.Action("DeleteUser", "User", new { area = "admin" })',
+            EditDoctor: '@Url.Action("AddUpdateDoctor", "User", new { area = "admin" })',
+            DetailsDoctor: '@Url.Action("DoctorDetails", "User", new { area = "admin" })',
+            EnableDisableDoctor: '@Url.Action("EnableDisableUser", "User", new { area = "admin" })',
+            ApproveDoctor: '@Url.Action("ApproveDoctor", "User", new { area = "admin" })',
+            GetDoctorsPagingList: '@Url.Action("GetDoctorsPagingList", "User", new { area = "admin" })'
+        }
+    </script>
+}
+
+

@@ -1,0 +1,41 @@
+﻿@using Actuarial.Domain.DTO;
+@using Actuarial.Domain.Emp
+@model ResultClassModel<Employer>
+@if (Model.List != null && Model.List.Count() > 0)
+{
+    int count = 1;
+    @foreach (var item in Model.List)
+    {
+        <tr role="row">
+            <td>@item.Name</td>
+            <td>@item.Gender</td>
+            <td>@item.Birthday</td>
+            <td>@item.DOH</td>
+            <td>@item.Department</td>
+            <td>@item.BasicSalary</td>
+            <td>@item.TotalSalary</td>
+            <td>@item.Mflg</td>
+            <td colspan="4">
+                <div class="action popup" data-rc="@string.Format("myPopup{0}", count)">
+                    <a href="javascript:" class="">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </a>
+                    <div class="action-inner popuptext" id="@string.Format("myPopup{0}", count)">
+                       
+                    </div>
+                </div>
+
+            </td>
+        </tr>
+        count += 1;
+    }
+}
+else
+{
+    <tr class="odd gradeX">
+        <td colspan="9"> No Record Found</td>
+    </tr>
+}
+

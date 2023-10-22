@@ -4,7 +4,7 @@ namespace Actuarial.Web.Controllers
 {
     public class EmployerController : Controller
     {
-        public IActionResult Index()
+        public IActionResult Employers()
         {
             return View();
         }

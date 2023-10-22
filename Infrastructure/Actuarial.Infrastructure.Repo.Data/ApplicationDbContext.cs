@@ -1,4 +1,5 @@
-﻿using Actuarial.Domain.Identity;
+﻿using Actuarial.Domain.Emp;
+using Actuarial.Domain.Identity;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -32,6 +33,10 @@ namespace Actuarial.Infrastructure.Repo.Data
             }
 
         }
+
+        #region Emp
+        public virtual DbSet<Employer> Employers { get; set; }
+        #endregion
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
