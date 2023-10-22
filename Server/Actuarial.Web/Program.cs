@@ -1,5 +1,5 @@
 using Actuarial.Domain.Identity;
-using Actuarial.Web.Data;
+using Actuarial.Infrastructure.Repo.Data;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
