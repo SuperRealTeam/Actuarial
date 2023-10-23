@@ -1,8 +1,105 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+﻿@using Actuarial.Domain.DTO;
+@model ResultClassModel<AdminDashBoardModel>
+@{
+    ViewData["Title"] = "Index";
+   
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div id="content-wrapper">
+
+    <div class="container-fluid">
+        <!-- Breadcrumbs-->
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a href="#">Dashboard</a>
+            </li>
+            <li class="breadcrumb-item active">Overview</li>
+        </ol>
+    </div>
+    <div class="container-fluid">
+        <div class="row ml-3 mr-3">
+            <div class="col-lg-3 col-md-6">
+                <div class="bulik-box greenlight">
+                    <h1>Total Employers</h1>
+                    <p>@Model.Object.TotalEmployers</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="bulik-box greenlight">
+                    <h1>Total Females</h1>
+                    <p>@Model.Object.TotalFemales</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="bulik-box yellowlight">
+                    <h1>Total Males</h1>
+                    <p>@Model.Object.TotalMales</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="bulik-box yellowlight">
+                    <h1>Total Departments</h1>
+                    <p>@Model.Object.TotalDepartments</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="bulik-box bluelight">
+                    <h1>Average Basic Salary</h1>
+                    <p>@String.Format("{0:0.00}", Model.Object.AvgBasicSalary)</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="bulik-box bluelight">
+                    <h1>Average Total Salary</h1>
+                    <p>@String.Format("{0:0.00}",Model.Object.AvgTotalSalary)</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-6 large-block mrgt">
+            <div class="block-border">
+                <h2>Departments Trend Graph</h2>
+                <div class="catergories-block mb-4">
+                    
+                  
+                </div>
+                <div id="containercategoryChart">
+                    <canvas id="categoryChart"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <footer class="sticky-footer">
+            <div class="container my-auto">
+                <div class="copyright text-center my-auto">
+                    <span>Copyright © Actuarial 2023</span>
+                </div>
+            </div>
+        </footer>
 </div>
+    @section Scripts{
+        <script src="~/js/Plugins/html5australiamapv3.8/mapdata.js"></script>
+        <script src="~/js/Plugins/html5australiamapv3.8/australiamap.js"></script>
+        <script src="~/js/Admin/Dashboard.js"></script>
+        @*<script src="~/js/chart.js"></script>*@
+        <script src="~/js/Plugins/Chart.js-master/dist/Chart.min.js"></script>
+        @*<script src="~/js/Plugins/Chart.js-master/dist/chart_custom.js"></script>
+    <script src="~/js/Plugins/Chart.js-master/dist/chartjs-init.js"></script>*@
+        <script src="~/js/Plugins/Chart.js-master/samples/utils.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function () {
+
+
+            });
+            var siteURL =
+            {
+                
+   
+                GetCategoriesGraph: '@Url.Action("GetCategoriesGraph", "Dashboard", new { area = "admin" })',
+                GetLevel1ddl: '@Url.Action("GetLevel1ddl", "Dashboard", new { area = "admin" })',
+              
+            };
+
+
+        </script>
+    }

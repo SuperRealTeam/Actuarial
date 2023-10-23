@@ -43,6 +43,7 @@
                                                             <th rowspan="1" class="sorting" data-sortby="BasicSalary" colspan="1">BasicSalary</th>
                                                             <th rowspan="1" class="sorting" data-sortby="TotalSalary" colspan="1">TotalSalary</th>
                                                             <th rowspan="1" class="sorting" data-sortby="Mflg" colspan="1">Mflg</th>
+                                                            <th rowspan="1" class="sorting" data-sortby="OwnerId" colspan="1">Owner</th>
                                                             <th>Action</th>
                                                         </tr>
                                                     </thead>
@@ -74,19 +75,14 @@
     <script type="text/javascript">
         var totalCount = "@Model.TotalCount";
     </script>
-    <script src="~/js/Admin/Doctor.js"></script>
+    <script src="~/js/Admin/Employer.js"></script>
     <script type="text/javascript">
         $(document).ready(function () {
             PageNumbering(totalCount);
         });
         var siteURL =
         {
-            DeleteDoctor: '@Url.Action("DeleteUser", "User", new { area = "admin" })',
-            EditDoctor: '@Url.Action("AddUpdateDoctor", "User", new { area = "admin" })',
-            DetailsDoctor: '@Url.Action("DoctorDetails", "User", new { area = "admin" })',
-            EnableDisableDoctor: '@Url.Action("EnableDisableUser", "User", new { area = "admin" })',
-            ApproveDoctor: '@Url.Action("ApproveDoctor", "User", new { area = "admin" })',
-            GetDoctorsPagingList: '@Url.Action("GetDoctorsPagingList", "User", new { area = "admin" })'
+            GetEmployersPagingList: '@Url.Action("GetEmployersPagingList", "Employer", new { area = "" })'
         }
     </script>
 }

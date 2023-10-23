@@ -8,13 +8,14 @@
     {
         <tr role="row">
             <td>@item.Name</td>
-            <td>@item.Gender</td>
+            <td>@(item.Gender==0?"Male":"Female")</td>
             <td>@item.Birthday</td>
             <td>@item.DOH</td>
             <td>@item.Department</td>
             <td>@item.BasicSalary</td>
             <td>@item.TotalSalary</td>
             <td>@item.Mflg</td>
+            <td>@(item.Owner?.FirstName+" "+item.Owner?.LastName)</td>
             <td colspan="4">
                 <div class="action popup" data-rc="@string.Format("myPopup{0}", count)">
                     <a href="javascript:" class="">

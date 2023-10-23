@@ -1,80 +1,91 @@
 ﻿$(document).ready(function () {
-    $(document).on('click', '#btnAddUpdateSpecializationLevel2', function () {
-        return SpecializationLevel2.AddUpdateDetails($(this));
+    $(document).on('click', '#btnAddUpdateEmployer', function () {
+        return Employer.AddUpdateDetails($(this));
     });
 
-    $(document).on('click', '.delete-SpecializationLevel2', function () {
-        SpecializationLevel2.DeleteSpecializationLevel2($(this).data('level2id'));
+    $(document).on('click', '.delete-Employer', function () {
+        Employer.DeleteEmployer($(this).data('userid'));
     })
 
-    $(document).on('click', '.enable-SpecializationLevel2', function () {
-        SpecializationLevel2.EnableDisableSpecializationLevel2Record($(this).data('level2id'), $(this).data('isenable'));
+    $(document).on('click', '.enable-Employer', function () {
+        Employer.EnableDisableEmployerRecord($(this).data('userid'));
     })
 
-    $(document).on('click', '.edit-SpecializationLevel2', function () {
-        window.location.href = baseUrl + siteURL.EditSpecializationLevel2 + '/' + $(this).data('level2id');
+    $(document).on('click', '.edit-Employer', function () {
+        window.location.href = baseUrl + siteURL.EditEmployer + '/' + $(this).data('userid');
     });
 
-    $(document).on('click', '.details-SpecializationLevel2', function () {
-        window.location.href = baseUrl + siteURL.DetailsSpecializationLevel2 + '/' + $(this).data('level2id');
+    $(document).on('click', '.details-Employer', function () {
+        window.location.href = baseUrl + siteURL.DetailsEmployer + '/' + $(this).data('userid');
     });
+
+
+    $(document).on('click', '.chklevel1', function () {
+        if ($(this).is(':checked')) {
+            var a = a;
+        }
+        else {
+            $(".level2 input[type=checkbox]").prop('checked', false);
+            $(".level3 input[type=checkbox]").prop('checked', false);
+            $(".level3").hide();
+        }
+        $(".chklevel1").each(function (index) {
+            if ($(this).is(':checked')) {
+                $(".level2." + $(this).data('id')).show();
+            }
+            else {
+               
+                $(".level2." + $(this).data('id')).hide();
+               
+              
+            }
+        });
+    });
+
+    $(document).on('click', '.chklevel2', function () {
+        if ($(this).is(':checked')) {
+            var a = a;
+        }
+        else {
+            $(".level3 input[type=checkbox]").prop('checked', false);
+        }
+        $(".chklevel2").each(function (index) {
+            if ($(this).is(':checked')) {
+                $(".level3." + $(this).data('id')).show();
+            }
+            else {
+              
+                $(".level3." + $(this).data('id')).hide();
+
+            }
+        });
+    });
+
 
 
     $(document).on('click', 'input[type=button]#btnFilterVersion', function () {
-        return SpecializationLevel2.ManageSpecializationLevel2s($(this));
+        return Employer.ManageEmployers($(this));
     });
 
     $("select#showRecords").on("change", function () {
-        return SpecializationLevel2.ShowRecords($(this));
+        return Employer.ShowRecords($(this));
     });
 
     $(document).on('click', '.sorting', function () {
-        return SpecializationLevel2.SortSpecializationLevel2s($(this));
+        return Employer.SortEmployers($(this));
     });
+
     $('#Search').keypress(function (e) {
         if (e.which === 13)  // the enter key code
-            return SpecializationLevel2.SearchSpecializationLevel2s($(this));
-    });
-    $(document).on('change', '.preview-img', function (sender) {
-        var input = sender.target;
-
-        var ext = $(input).val().split('.').pop().toLowerCase();
-        if ($.inArray(ext, ['png', 'jpg', 'jpeg']) === -1) {
-            $(input).next().html('invalid extension!').addClass('field-validation-error')
-            $(input).val('');
-            return;
-        }
-        else {
-            $(input).next().html('').removeClass('field-validation-error')
-        }
-        var file_size = input.files[0].size;
-        if (file_size > 2097152) {
-            $(input).next().html('file max size should be 2mb!').addClass('field-validation-error')
-            $(input).val('')
-            return;
-        }
-        else {
-            $(input).next().html('').removeClass('field-validation-error')
-        }
-        if (input.files && input.files[0]) {
-            var reader = new FileReader();
-            $('.div-attachment').css("display", "block");
-            reader.onload = function (e) {
-                $('#uploaded-img')
-                    .attr('src', e.target.result)
-                    .width(100);
-            };
-
-            reader.readAsDataURL(input.files[0]);
-        }
+            return Employer.SearchEmployers($(this));
     });
 })
 
-var SpecializationLevel2 = {
+var Employer = {
     AddUpdateDetails: function (sender) {
-        var form = $("form#SpecializationLevel2");
+        var form = $("#formAddEmployerDetails");
         $.ajaxExt({
-            url: baseUrl + siteURL.AddUpdateSpecializationLevel2,
+            url: baseUrl + siteURL.AddUpdateEmployerDetails,
             type: 'POST',
             validate: true,
             formToValidate: form,
@@ -83,17 +94,17 @@ var SpecializationLevel2 = {
             showThrobber: false,
             showErrorMessage: true,
             messageControl: $('div.messageAlert'),
-            success: function (results, message) {
-                $.ShowMessage($('div.messageAlert'), message, MessageType.Success);
+            success: function (results, message, status) {
+                $.ShowMessage($('div.messageAlert'), message, status);
                 setTimeout(function () {
-                    window.location.href = siteURL.SpecializationLevel2;
+                    window.location.href = siteURL.EmployersList;
                 }, 3000);
             }
         });
         return false;
     },
 
-    SortSpecializationLevel2s: function (sender) {
+    SortEmployers: function (sender) {
         if ($(sender).hasClass("sorting_asc")) {
             $('.sorting').removeClass("sorting_asc");
             $('.sorting').removeClass("sorting_desc")
@@ -115,14 +126,14 @@ var SpecializationLevel2 = {
         }
     },
 
-    ManageSpecializationLevel2s: function (totalCount) {
+    ManageEmployers: function (totalCount) {
         var totalRecords = 0;
         totalRecords = parseInt(totalCount);
         //alert(totalRecords);
         PageNumbering(totalRecords);
     },
 
-    SearchSpecializationLevel2s: function (sender) {
+    SearchEmployers: function (sender) {
         paging.startIndex = 1;
         Paging(sender);
     },
@@ -133,16 +144,16 @@ var SpecializationLevel2 = {
         Paging(sender);
     },
 
-    DeleteSpecializationLevel2: function (id) {
-        $.ConfirmBox("", "All the related Subcategories will get deleted. Are you sure you want to delete the record?", null, true, "Yes", true, null, function () {
+    DeleteEmployer: function (id) {
+        $.ConfirmBox("", "Are you sure you want to delete this record?", null, true, "Yes", true, null, function () {
             $.ajaxExt({
                 type: 'POST',
                 validate: false,
                 showErrorMessage: true,
                 messageControl: $('div.messageAlert'),
                 showThrobber: true,
-                url: baseUrl + siteURL.DeleteSpecializationLevel2,
-                data: { SpecializationLevel2Id: id },
+                url: baseUrl + siteURL.DeleteEmployer,
+                data: { userID: id },
                 success: function (results, message, status) {
                     debugger;
                     $.ShowMessage($('div.messageAlert'), message, status);
@@ -155,16 +166,16 @@ var SpecializationLevel2 = {
 
         });
     },
-    EnableDisableSpecializationLevel2Record: function (sender, lbl) {
-        $.ConfirmBox("", "All the related Subcategories will get  " + lbl + "d" + ". Are you sure you want to " + lbl + " the record?", null, true, "Yes", true, null, function () {
+    EnableDisableEmployerRecord: function (sender) {
+        $.ConfirmBox("", "Are you sure?", null, true, "Yes", true, null, function () {
             $.ajaxExt({
                 type: 'POST',
                 validate: false,
                 showErrorMessage: true,
                 messageControl: $('div.messageAlert'),
                 showThrobber: true,
-                url: baseUrl + siteURL.EnableDisableSpecializationLevel2,
-                data: { SpecializationLevel2Id: sender },
+                url: baseUrl + siteURL.EnableDisableEmployer,
+                data: { userID: sender },
                 success: function (results, message, status) {
                     $.ShowMessage($('div.messageAlert'), message, status);
                     Paging();
@@ -182,6 +193,7 @@ function Paging(sender) {
     obj.RecordsPerPage = paging.pageSize;
     obj.SortBy = $('#SortBy').val();
     obj.SortOrder = $('#SortOrder').val();
+   
 
     $.ajaxExt({
         type: "POST",
@@ -191,7 +203,7 @@ function Paging(sender) {
         messageControl: null,
         showThrobber: false,
         throbberPosition: { my: "left center", at: "right center", of: sender, offset: "5 0" },
-        url: baseUrl + siteURL.GetSpecializationLevel2PagingList,
+        url: baseUrl + siteURL.GetEmployersPagingList,
         success: function (results, message) {
             $('#divResult table:first tbody').html(results[0]);
             PageNumbering(results[1]);

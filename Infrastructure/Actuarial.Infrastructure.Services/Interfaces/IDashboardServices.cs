@@ -1,5 +1,4 @@
 ﻿using Actuarial.Domain.DTO;
-using Actuarial.Domain.Emp;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,10 +7,9 @@ using System.Threading.Tasks;
 
 namespace Actuarial.Infrastructure.Services.Interfaces
 {
-    public interface IEmpServcies
+    public interface IDashboardServices
     {
-        ResultClassModel<Employer> GetEmpPagedList(EmployerRequestModel employerRequest);
-
-
+        ResultClassModel<AdminDashBoardModel> GetDashboardsCount();
+        ResultClassModel<CategoryGraphModel> GetCategoriesCount();
     }
 }

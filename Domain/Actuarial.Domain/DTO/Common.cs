@@ -99,7 +99,23 @@ namespace Actuarial.Domain.DTO
     {
         
     }
-
+    public class AdminDashBoardModel
+    {
+        public int? TotalEmployers { get; set; }
+        public int? TotalFemales { get; set; }
+        public int? TotalMales { get; set; }
+        public decimal? AvgBasicSalary { get; set; }
+        public decimal? AvgTotalSalary { get; set; }
+        public int? TotalDepartments { get; set; }
+    }
+    public class CategoryGraphModel
+    {
+        public long[] data { get; set; }
+        public string label { get; set; }
+        public string[] labelsheading { get; set; }
+        public string backgroundColor { get; set; }
+        public int borderWidth { get; set; }
+    }
 
 
     public class PasswordEncryptedModel

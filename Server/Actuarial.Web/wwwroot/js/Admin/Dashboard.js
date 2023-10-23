@@ -2,165 +2,34 @@
 var patientRecords = {};
 $(document).ready(function () {
 
-    $(".search_postcode").select2(
-        {
-            placeholder: "Search by postcode",
-            multiple: false,
-            //maximumSelectionSize: 1,
-            ajax: {
-                url: siteURL.GetPostList,
-                global: false,
-                cache: false,
-                dataType: 'json',
-                data: function (term, page) {
-
-                    return {
-                        Search: term,
-                        RecordsPerPage: 10,
-                        PageNo: page
-                    };
-                },
-                results: function (data) {
-                    var results = [];
-                    $.each(data, function (index, item) {
-                        results.push({
-                            id: item.id,
-                            text: item.name
-                        });
-
-                    });
-                    return {
-                        results: results
-                    };
-                }
-            },
-            initSelection: function (element, callback) {
-                var id;
-                id = $(element).val();
-                if (id != "") {
-                    return $.ajax({
-                        url: baseUrl + siteURL.GetInitPostCodeList,
-                        type: "Get",
-                        dataType: "json", global: false,
-                        cache: false,
-                        data: {
-                            Ids: id,
-                        }
-                    }).done(function (data) {
-                        var results;
-                        results = [];
-                        $.each(data, function (index, item) {
-                            results.push({
-                                id: item.id,
-                                text: item.name
-                            });
-                        });
-
-                        callback(results);
-                    });
-                }
-            },
-        });
-
-    Dashboard.BindMapForDoctor();
-    Dashboard.GraphByTypeAppointment();
-    Dashboard.GetLevel1DDl();
-    Dashboard.GetLevel1DDlForDoctor();
-    Dashboard.GetCategoriesChart(0);
-    Dashboard.GetDoctorPieChart(0);
-    Dashboard.GraphByStatusAppointment();
+  
+    
 
 
-    $("#ddlLevel1").change(function () {
-        Dashboard.GetLevel2DDl(this.value);
-    });
+   
+    Dashboard.GetCategoriesChart();
+    
 
-    $("#ddlLevel1doctor").change(function () {
-        Dashboard.GetLevel2DDlForDoctor(this.value);
-    });
-
-    $(document).on('click', '#btnSearchdoctorGraph', function () {
-
-        var cat = 0;
-        var ddl1 = $("#ddlLevel1doctor").val();
-        if (ddl1 > 0) {
-            cat = 1;
-        }
-
-        var ddl2 = $("#ddlLevel2doctor").val();
-        if (ddl2 > 0) {
-            cat = 2;
-        }
-        Dashboard.GetDoctorPieChart(cat);
-    });
-
-    $(document).on('click', '#btnSearchCategoryGraph', function () {
-
-        var cat = 0;
-        var ddl1 = $("#ddlLevel1").val();
-        if (ddl1 > 0) {
-            cat = 1;
-        }
-
-        var ddl2 = $("#ddlLevel2").val();
-        if (ddl2 > 0) {
-            cat = 2;
-        }
-        Dashboard.GetCategoriesChart(cat);
-    });
-    $(document).on('click', '#btnClearCategoryGraph', function () {
-        $("#txtsuburb").select2('val', null);
-
-        Dashboard.GetLevel1DDl();
-        Dashboard.GetCategoriesChart(0);
-
-
-    });
-    $(document).on('click', '#btnClearDoctorGraph', function () {
-        $("#txtsuburbdoctor").select2('val', null);
-
-        Dashboard.GetLevel1DDlForDoctor();
-        Dashboard.GetDoctorPieChart(0);
-
-
-    });
+    
 
     //Dashboard.GetAppointmentDataForBarChart();
-    Dashboard.GetUserDataForLineChart(1);
+    
     $(document).on('click', '.current-map-view', function () {
 
         $('.current-map-view').removeClass("btn-add");
         $(this).toggleClass("btn-add")
         if ($(this).data('viewtype') == "1") {
-            Dashboard.BindMapForDoctor();
+           
         }
         else {
-            Dashboard.BindMapForPatient();
+           
         }
 
     });
 
-    $(document).on('change', '.select-appointment-week', function () {
-        Dashboard.GetAppointmentDataForBarChart($(this).val());
-    });
+   
 
-    //$(document).on('change', '.select-user-week', function () {
-    //    Dashboard.GetUserDataForLineChart($(this).val())
-    //});
-
-    $(document).on('change', '#ddlduration', function () {
-        Dashboard.GetUserDataForLineChart($(this).val());
-    });
-
-    $(document).on('click', '#btnSearchappointmentgraph', function () {
-        Dashboard.GraphByTypeAppointment();
-
-    });
-
-    $(document).on('click', '#btnSearchappointmentStatusgraph', function () {
-        Dashboard.GraphByStatusAppointment();
-
-    });
+   
 
 });
 
@@ -721,119 +590,15 @@ var Dashboard = {
 
     // Rohit //
 
-    GetLevel1DDl: function () {
-        $.ajaxExt({
-            type: "Get",
-            validate: false,
-            messageControl: null,
-            showThrobber: false,
-            url: baseUrl + siteURL.GetLevel1ddl,
-            success: function (results, message, status, id, list, object, url, data) {
-                $("#ddlLevel1").html("");
-                var optionhtml1 = '<option value="' +
-                    0 + '">' + "Level1" + '</option>';
-                $("#ddlLevel1").append(optionhtml1);
 
-                $.each(list, function (i) {
-
-                    var optionhtml = '<option value="' +
-                        list[i].value + '">' + list[i].text + '</option>';
-                    $("#ddlLevel1").append(optionhtml);
-                });
-
-                $("#ddlLevel2").html("");
-                var optionhtml2 = '<option value="' +
-                    0 + '">' + "Level2" + '</option>';
-                $("#ddlLevel2").append(optionhtml2);
-            }
-        });
-    },
-
-    GetLevel1DDlForDoctor: function () {
-        $.ajaxExt({
-            type: "Get",
-            validate: false,
-            messageControl: null,
-            showThrobber: false,
-            url: baseUrl + siteURL.GetLevel1ddl,
-            success: function (results, message, status, id, list, object, url, data) {
-                $("#ddlLevel1doctor").html("");
-                var optionhtml1 = '<option value="' +
-                    0 + '">' + "Level1" + '</option>';
-                $("#ddlLevel1doctor").append(optionhtml1);
-
-                $.each(list, function (i) {
-
-                    var optionhtml = '<option value="' +
-                        list[i].value + '">' + list[i].text + '</option>';
-                    $("#ddlLevel1doctor").append(optionhtml);
-                });
-
-                $("#ddlLevel2doctor").html("");
-                var optionhtml2 = '<option value="' +
-                    0 + '">' + "Level2" + '</option>';
-                $("#ddlLevel2doctor").append(optionhtml2);
-            }
-        });
-    },
-
-    GetLevel2DDl: function (id) {
-        $.ajaxExt({
-            type: "Get",
-            validate: false,
-            messageControl: null,
-            showThrobber: false,
-            data: { lvl1Id: id },
-            url: baseUrl + siteURL.GetLevel2ddl,
-            success: function (results, message, status, id, list, object, url, data) {
-                $("#ddlLevel2").html("");
-                var optionhtml1 = '<option value="' +
-                    0 + '">' + "--Select Level2--" + '</option>';
-                $("#ddlLevel2").append(optionhtml1);
-
-                $.each(list, function (i) {
-
-                    var optionhtml = '<option value="' +
-                        list[i].value + '">' + list[i].text + '</option>';
-                    $("#ddlLevel2").append(optionhtml);
-                });
-            }
-        });
-    },
-    GetLevel2DDlForDoctor: function (id) {
-        $.ajaxExt({
-            type: "Get",
-            validate: false,
-            messageControl: null,
-            showThrobber: false,
-            data: { lvl1Id: id },
-            url: baseUrl + siteURL.GetLevel2ddl,
-            success: function (results, message, status, id, list, object, url, data) {
-                $("#ddlLevel2doctor").html("");
-                var optionhtml1 = '<option value="' +
-                    0 + '">' + "--Select Level2--" + '</option>';
-                $("#ddlLevel2doctor").append(optionhtml1);
-
-                $.each(list, function (i) {
-
-                    var optionhtml = '<option value="' +
-                        list[i].value + '">' + list[i].text + '</option>';
-                    $("#ddlLevel2doctor").append(optionhtml);
-                });
-            }
-        });
-    },
-
-    GetCategoriesChart: function (cattype) {
-        var sub = $("#txtsuburb").val();
-        var lv1 = $("#ddlLevel1").val();
-        var lv2 = $("#ddlLevel2").val();
+    GetCategoriesChart: function () {
+     
         $.ajaxExt({
             type: "POST",
             validate: false,
             messageControl: null,
             showThrobber: false,
-            data: { suburb: sub, catType: cattype, level1Id: lv1, level2Id: lv2 },
+            data: {  },
             url: baseUrl + siteURL.GetCategoriesGraph,
             success: function (results, message, status, id, list, object, url, data) {
                 Dashboard.BindCategoriesBarChart(object);

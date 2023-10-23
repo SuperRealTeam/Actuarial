@@ -61,6 +61,8 @@ namespace Actuarial.Web.Controllers
 
                 return JsonResult(new ResultClassModel() { Status = ActionStatus.Error, Message = "Validation Error!" });
             }
+         
+
             var user = await _userManager.FindByEmailAsync(model.UserName);
             if (user == null)
             {
@@ -83,14 +85,14 @@ namespace Actuarial.Web.Controllers
                 UserLoginId = user.Id,
             };
             // Create the identity from the user info
-            var identity = new ClaimsIdentity(CookieAuthenticationDefaults.AuthenticationScheme, LoggedIn_User.Email,"Admin");
-            identity.AddClaim(new Claim("Email", LoggedIn_User.Email));
-            identity.AddClaim(new Claim("FirstName", LoggedIn_User.FirstName));
-            identity.AddClaim(new Claim("LastName", LoggedIn_User.LastName));
-            identity.AddClaim(new Claim("Session", newSession.Token1));
-            identity.AddClaim(new Claim("userRoleID", "Admin"));
-            identity.AddClaim(new Claim("UserId", LoggedIn_User.Id.ToString()));
+            var identity = new ClaimsIdentity(CookieAuthenticationDefaults.AuthenticationScheme);
+            identity.AddClaim(new(ClaimTypes.NameIdentifier, user.Id.ToString()));
+            identity.AddClaim(new(ClaimTypes.Email, user.Email));
+            identity.AddClaim(new(ClaimTypes.Name, user.FirstName));
+            identity.AddClaim(new(ClaimTypes.Surname, user.LastName));
            
+            
+                
             var principal = new ClaimsPrincipal(identity);
             await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, principal, new AuthenticationProperties { IsPersistent = model.RememberMe, ExpiresUtc = DateTime.UtcNow.AddDays(25) });
            

@@ -6,6 +6,7 @@ using Actuarial.Infrastructure.Services.Classes;
 using Actuarial.Infrastructure.Services.Interfaces;
 using Actuarial.Web.Extensions;
 using Actuarial.Web.Init;
+using Actuarial.Web.Managers;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -14,11 +15,15 @@ using Microsoft.Extensions.DependencyInjection;
 var builder = WebApplication.CreateBuilder(args);
 
 ServiceExtensions.RegisterServices(builder.Services);
-builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme
-   ).AddCookie(options => { options.LoginPath = "/Account/Login"; });
 
 
 
+builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie(m =>
+{
+    m.LoginPath = new Microsoft.AspNetCore.Http.PathString("/Account/Login");
+    m.Cookie.Name = "CookieAuth";
+
+});
 
 builder.Services.AddSession(options =>
 {
@@ -29,7 +34,7 @@ builder.Services.AddMvc(options => options.MaxModelValidationErrors = 50)
     .AddRazorPagesOptions(options =>
     {
 
-        options.Conventions.AllowAnonymousToPage("/Home/Login");
+        options.Conventions.AllowAnonymousToPage("/Account/Login");
     });
 builder.Services.AddScoped<ViewRender, ViewRender>();
 
@@ -45,6 +50,8 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddRazorPages();
 builder.Services.AddTransient(typeof(IUnitOfWork), typeof(UnitOfWork));
 builder.Services.AddTransient(typeof(IEmpServcies), typeof(EmpServcies));
+builder.Services.AddTransient(typeof(IEmpManger), typeof(EmpManger));
+builder.Services.AddTransient(typeof(IDashboardServices), typeof(DashboardServices));
 
 var app = builder.Build();
 
@@ -59,12 +66,17 @@ else
     // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
-
+app.Use(async (context, next) =>
+{
+    var cookies = context.Request.Cookies;
+    await next.Invoke();
+});
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllerRoute(
