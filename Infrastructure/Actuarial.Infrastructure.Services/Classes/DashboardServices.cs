@@ -6,6 +6,7 @@ using Actuarial.Infrastructure.Services.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -57,17 +58,30 @@ namespace Actuarial.Infrastructure.Services.Classes
             var query=_unitOfWork.GetRepository<Employer>().GetAllAsync().Result;
 
             AdminDashBoardModel adminDashBoard = new();
-            adminDashBoard.TotalEmployers= query.Count();
-            adminDashBoard.TotalMales= query.Where(p=>p.Gender==0).Count();
-            adminDashBoard.TotalFemales = query.Where(p => p.Gender == 1).Count();
-            adminDashBoard.TotalDepartments=query.Select(p=>p.Department).Distinct().Count();
-            adminDashBoard.AvgBasicSalary=Queryable.Average(query.Select(p=>p.BasicSalary).AsQueryable());
-            adminDashBoard.AvgTotalSalary = Queryable.Average(query.Select(p => p.TotalSalary).AsQueryable());
-
+            if (query != null && query.Count() > 0)
+            {
+                adminDashBoard.TotalEmployers = query.Count();
+                adminDashBoard.TotalMales = query.Where(p => p.Gender == 0).Count();
+                adminDashBoard.TotalFemales = query.Where(p => p.Gender == 1).Count();
+                adminDashBoard.TotalDepartments = query.Select(p => p.Department).Distinct().Count();
+                adminDashBoard.AvgBasicSalary = Queryable.Average(query.Select(p => p.BasicSalary).AsQueryable());
+                adminDashBoard.AvgTotalSalary = Queryable.Average(query.Select(p => p.TotalSalary).AsQueryable());
+            }
+            else
+            {
+                adminDashBoard.TotalEmployers = 0;
+                adminDashBoard.TotalMales = 0;
+                adminDashBoard.TotalFemales = 0;
+                adminDashBoard.TotalDepartments = 0;
+                adminDashBoard.AvgBasicSalary = 0;
+                adminDashBoard.AvgTotalSalary =0;
+            }
             result.Status = ActionStatus.Successfull;
             result.Object=adminDashBoard;
 
             return result;
         }
+
+       
     }
 }

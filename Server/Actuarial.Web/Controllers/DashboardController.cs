@@ -1,6 +1,7 @@
 ﻿using Actuarial.Domain.DTO;
 using Actuarial.Infrastructure.Services.Interfaces;
 using Actuarial.Web.Attributes;
+using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -33,6 +34,12 @@ namespace Actuarial.Web.Controllers
 
             result = _dashboardServices.GetCategoriesCount();
             return JsonResult(result);
+        }
+
+        public IActionResult Signout()
+        {
+            HttpContext.SignOutAsync();
+            return RedirectToAction("Login", "Account", new { area = "" });
         }
     }
 }
